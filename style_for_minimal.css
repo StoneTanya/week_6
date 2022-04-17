@@ -1,8 +1,12 @@
+* {
+    box-sizing: border-box;
+}
 .container {
     display: grid;
+    height: 100%;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 3% 11% 3% 11% 38% 14% 10% 10%;
+    grid-template-columns: repeat (5 1fr);
+    grid-template-rows: 3% 11% 3% 13% 1fr 14% 2% 6% 10%;
     margin: 0px 0px;
 }
 
@@ -22,7 +26,7 @@
     padding: 10px;
     background-color: rgba(254, 254, 201, 1);
     font-family: 'Vollkorn', serif;
-    font-size: 18px;
+    font-size: 1.2rem;
     line-height: 139%;
     color: #47474F;
 }
@@ -35,53 +39,63 @@
 .projects {
     grid-row: 5 / 6;
     grid-column: 1 / 6;
+    background-color: #F5F5F5;
 }
 
 .our_team {
     grid-row: 6 / 7;
     grid-column: 1 / 6;
-    margin-bottom: 2%;
 }
 
-.comment {
+.comment_icon {
     grid-row: 7 / 8;
     grid-column: 3 / 4;
 }
 
 .julius_comment {
-    grid-row: 7 / 8;
+    grid-row: 8 / 9;
     grid-column: 2 / 3;
+    text-align: center;
 }
 
 .rachel_comment {
-    grid-row: 7 / 8;
+    grid-row: 8 / 9;
     grid-column: 4 / 5;
+    text-align: center;
 }
 .footer {
-    grid-row: 8 / 9;
+    grid-row: 9 / 10;
     grid-column: 1 / 6;
 }
 
+/* основное меню, шапка */
 
-.logo {
-    margin-left: 3em;
-    margin-right: 3em;
-    max-width: 100%;
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* основное меню, шапка */
 .flex_header {
     display: flex;
-    justify-content: flex-start;
-    padding: 10px;
+    flex-flow: row nowrap;
+    width: 20%;
+    justify-content: space-around;
     align-items: center;
 }
 
+.nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    width: 50%;
+    margin-right: 15%;
+}
 .menu {
     display: flex;
-    flex-flow: nowrap;
+    flex-flow: row nowrap;
     list-style: none;
-    justify-content: center;
 }
 
 .menu a {
@@ -90,8 +104,8 @@
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 0.9rem;
+    line-height: 1em;
     color: #404040;
     transition: .5s;
 }
@@ -106,15 +120,11 @@
 title,
 h4 {
     font-family: 'Oswald', sans-serif;
-    font-size: 22px;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
     line-height: 38px;
     color: #333333;
-}
-
-h4 {
-    margin-right: 15em;
 }
 
 .H1,
@@ -122,60 +132,64 @@ h4 {
 .H3,
 .yellow,
 .text, 
-.content {
+.content, figcaption {
     font-style: normal;
     font-weight: 400;
     text-align: center;
 }
 
-.H1, .H3, .content   {
+.H1, .H3, .content, .juliusName, .rachelName {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
-
+.juliusName, .rachelName {
+    color: #ABABAB;
+}
 .H1 {
-    font-size: 44px;
-    line-height: 55px;
+    font-size: 2rem;
+    line-height: 4rem;
     color: #FFFFFF;
 }
 
-
 .H3 {
-    font-size: 23px;
+    font-size: 1.7rem;
     line-height: 157%;
     color: #333333;
 }
 
 .content {
     color: #333333;
-    font-size: 16px;
+    font-size: 1.3rem;
     line-height: 125%;
 }
 
 .H5,
 .text,
-figcaption p,
-.f_block p {
+.f_block p, .footer2 p {
     font-family: 'Vollkorn', serif;
-    font-size: 15px;
+    font-size: 1.1rem;
 }
 
 .H5 {
     line-height: 20px;
     color: rgba(255, 255, 255, 0.81);
 }
-
-.text {
-    line-height: 147%;
-    color: #333333;
-    margin: 20px 20px;
+.footer2 p {
+    color: rgba(255, 255, 255, 0.4);
 }
 
+.text {
+    line-height: 125%;
+    color: #333333;
+}
+
+/* блок с фоновой картинкой */
 .slogan {
     background: url("assets/images/header.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    max-width: 100%;
 }
 
 /* блок main */
@@ -183,84 +197,145 @@ figcaption p,
 .howwemake_flex2 {
     display: flex;
     justify-content: space-around;
-    margin: 10px;
+    text-align: center;
 }
 
-.howwemake_flex1 img {
+.howwemake_flex1 figure {
     background-color: #F5F5F5;
     border-radius: 0px;
-    margin: 20px 20px;
+    padding: 1% 8%;
+    width: 35%;
 }
 
-figcaption {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 125%;
-    font-style: normal;
-    font-weight: 400;
+.howwemake_flex2_content {
+    width: 35%;
+    padding: 0% 2%;
 }
 
-.projects_img {
+.projects_img1, 
+.projects_img2, 
+.projects_img3 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     margin-right: 20%;
     margin-left: 20%;
     }
 
-.table_img {
-    flex: 0  1;
+/* блок наша команда */
+.flex_team {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
     text-align: center;
 }
 
-.flex_team {
-    display: flex;
-    justify-content: center;
-    width: 100%
-}
-
-.team {
-    margin: 3%;
-}
+/* блок с отзывами */
 
 .comment svg {
     margin-left: 50%;
 }
-
-
 .flex_comments {
     display: flex;
     justify-content: center;
-    width: 100%;
-}
-
-.flex_comments p {
-    margin-right: 3%;
 }
 
 /* Футер */
-
 .flex_footer {
     display: flex;
     justify-content: space-around;
-    width: 100%;
 }
-
 .footer1 {
     background: url('assets/images/footer_pic.png'), #7EC4BD;
     border-radius: 0px;
 }
-
 .footer2 {
     background-color: #000000;
     color: #FFFFFF;
-    justify-content: center;
-    width: 100%;
+    text-align: center;
 }
-
 .f_block {
     padding: 5px 10px;
     margin: 10px;
     flex: 1 0 0;
     text-align: center;
+}
+.calculate {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    align-items:center
+}
+
+@media screen and (max-width: 600px) {
+    
+.container {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-areas: 
+    "h h h h"
+    "sl sl sl sl"
+    "yl yl yl yl"
+    "hwm hwm hwm hwm"
+    "prj prj prj prj"
+    "tm tm tm tm"
+    "f f f f"
+    ". ic . ."
+    ". cJ . cR";
+    grid-template-columns: repeat (4 1fr);
+    grid-template-rows: 3% 7% 2% 8% 1fr 15% 20%;
+    margin: 0px 0px;
+}
+
+.header {
+    grid-area: h;
+}
+
+.slogan {
+    grid-area: sl;
+}
+
+.yellow {
+    grid-area: yl;
+}
+
+.howwemake {
+    grid-area: hwm;
+}
+
+.projects {
+    grid-area: prj;
+}
+
+.our_team {
+    grid-area: tm;
+}
+.comment_icon {
+    grid-area: ic;
+    display: none;
+}
+.julius_comment {
+    grid-area: cJ;
+    display: none;
+}
+
+.rachel_comment {
+    grid-area: cR;
+    display: none;
+}
+.footer {
+    grid-area: f;
+}
+
+.projects_img1, 
+.projects_img2, 
+.projects_img3 {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 0 0 auto;
+    }
+
 }
