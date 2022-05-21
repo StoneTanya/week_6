@@ -270,7 +270,6 @@ h4 {
 }
 
 @media screen and (max-width: 600px) {
-    
 .container {
     display: grid;
     height: 100%;
@@ -282,11 +281,11 @@ h4 {
     "hwm hwm hwm hwm"
     "prj prj prj prj"
     "tm tm tm tm"
-    "f f f f"
     ". ic . ."
-    ". cJ . cR";
+    ". cJ cR ."
+    "f f f f";
     grid-template-columns: repeat (4 1fr);
-    grid-template-rows: 3% 7% 2% 8% 1fr 15% 20%;
+    grid-template-rows: 3% 7% 3% 8% 1fr 17% 0%;
     margin: 0px 0px;
 }
 
@@ -319,22 +318,21 @@ h4 {
 }
 .julius_comment {
     grid-area: cJ;
-    display: none;
 }
 
 .rachel_comment {
     grid-area: cR;
-    display: none;
 }
 .footer {
     grid-area: f;
+    display: none;
 }
 
 .projects_img1, 
 .projects_img2, 
 .projects_img3 {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     flex: 0 0 auto;
     }
 
